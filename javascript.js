@@ -1,5 +1,6 @@
 // remember to comment and pseudo-code everything 
 
+//include function expressions somewhere I guess
 
 //rps function name means Rock-Paper-Scissors. function randomly selects a string
 function rps() {
@@ -8,14 +9,16 @@ function rps() {
     const randomIndex = Math.floor(Math.random() * rpsString.length);
 
     const rockPaperScissors = rpsString[randomIndex];
-
-    return console.log(rockPaperScissors);
-}
+    
+    console.log(rockPaperScissors);
+    
+    return; 
+};
 //function purpose is to assign the computer a choice using the above function
     function getComputerChoice() {
     
         let choice = rps();
-    
+        //something is fucky over here
         return console.log(choice);
     }
 
@@ -33,3 +36,20 @@ function getHumanChoice(choice) {
     }
     return;
 };
+
+    function shoot() {
+
+        getHumanChoice();
+
+        getComputerChoice();
+
+        if (getHumanChoice() > getComputerChoice() ) {
+            console.log("A human has won")
+        }
+
+        return;
+    };
+
+//make a function that determines what answer beats what
+
+//make another function store whether the pc or person won, involving an increment operator "++"
