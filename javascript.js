@@ -15,15 +15,15 @@ function rps() {
     return; 
 };
 //function purpose is to assign the computer a choice using the above function
-    function getComputerChoice() {
+    function getComputerChoice(pcChoice) {
     
-        let choice = rps();
-        //something is fucky over here
-        return console.log(choice);
+        pcChoice = rps();
+
+        return;
     }
 
 //function purpose is to have the human determine the variable
-function getHumanChoice(choice) {
+function getHumanChoice() {
 
     choice = prompt('Choose between: "rock" "paper" "scissors" P.S. Lower case answers only')
 
@@ -37,7 +37,7 @@ function getHumanChoice(choice) {
     return;
 };
 
-    function shoot() {
+    function playRound() {
 
         getHumanChoice();
 
@@ -45,7 +45,7 @@ function getHumanChoice(choice) {
 
         if (getHumanChoice() > getComputerChoice() ) {
             console.log("A human has won")
-        }
+        } 
 
         return;
     };
