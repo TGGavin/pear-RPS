@@ -15,38 +15,41 @@ function rps() {
     return; 
 };
 //function purpose is to assign the computer a choice using the above function
-    function getComputerChoice(pcChoice) {
+    function getComputerChoice(computerChoice) {
     
-        pcChoice = rps();
+        computerChoice = rps();
 
         return;
     }
 
 //function purpose is to have the human determine the variable
-function getHumanChoice() {
+function getHumanChoice(outCome) {
 
     choice = prompt('Choose between: "rock" "paper" "scissors" P.S. Lower case answers only')
 
     if (choice == "rock" 
         || choice == "paper" 
         || choice == "scissors" ) {
-        console.log(choice);
+            
+            outCome = choice;
+
+            console.log(outCome);
     } else {
-        console.log("Choose between: Rock, Paper, Scissors. Use only lowercase as an answer")
+        return;
     }
+
     return;
 };
 
-    function playRound() {
+    function playRound() { //wtf this is all wrong
 
-        getHumanChoice();
-
+       let test = getHumanChoice();
+        
         getComputerChoice();
-
-        if (getHumanChoice() > getComputerChoice() ) {
-            console.log("A human has won")
-        } 
-
+       
+        console.log(test)
+ 
+        
         return;
     };
 
