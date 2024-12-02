@@ -15,14 +15,20 @@
 
 // remember to comment and pseudo-code everything 
 
-//include function expressions somewhere I guess
-
-//globalize the values of getHumanChoice and getComputerChoice to they can be accessed by other functions
-
-
     let playerScore = "0";
 
     let computerScore = "0";
+
+    function scoreCounter() {
+
+        yourScoreString = "This is your Score: "
+
+        computerScoreString = "This is the computers score: "
+
+        console.log(yourScoreString + playerScore)
+
+        console.log(computerScoreString + computerScore)
+    }
 
     //figure out how to increase player and computer score individually based on who wins a round
 
@@ -47,7 +53,9 @@
 
     humanAnswer = prompt( 'will only accept "rock", "paper", "scissors"' );
 
-    console.log(humanAnswer);
+    playerResult = humanAnswer.toLowerCase();
+
+    console.log(playerResult);
 
     if (humanAnswer == "rock") {
     
@@ -55,10 +63,6 @@
 
     return;
     };
-
-    playerScoreText.textContent = playerScore;
-
-    computerScoreText.textContent = computerScore;
 
 </script>
 </body>
