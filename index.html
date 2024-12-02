@@ -11,12 +11,6 @@
 
     <button onclick = "play()">Click here to start</button>
 
-    <p>Your Score</p>
-    <span id="playerScore"></span>
-    <p>Computer Score</p>
-    <span id="computerScore"></span>
-
-
 <script>
 
 // remember to comment and pseudo-code everything 
@@ -26,63 +20,16 @@
 //globalize the values of getHumanChoice and getComputerChoice to they can be accessed by other functions
 
 
-//rps function name means Rock-Paper-Scissors. function randomly selects a string, to be used as the computers choice
-    function getComputerChoice() {
-
-        const rpsString = ["rock", "paper", "scissors"];
-
-        const randomIndex = Math.floor(Math.random() * rpsString.length);
-
-        const pcChoice = rpsString[randomIndex];
-
-        console.log(pcChoice);
-
-    return; 
-    };
-
-    //function purpose is to have the human determine the variable
-    function getHumanChoice(outCome) {
-
-        choice = prompt('Choose between: "rock", "paper", "scissors". P.S. Lower case answers only')
-
-        if (choice == "rock" 
-        || choice == "paper" 
-        || choice == "scissors" ) {
-            outCome = choice;
-
-            console.log(outCome);
-
-    } else {
-        return console.log("No option was selected ");
-    }
-
-    return;
-    };
-
-    function randomStringSelector(string1, string2, string3) {
-
-        let rpsString = [string1, string2, string3];
-
-        let randomIndex = Math.floor(Math.random() * rpsString.length);
-
-        let outCome = rpsString[randomIndex];
-
-    return console.log(outCome);
-    } 
-
-    let playerScoreText = document.getElementById("playerScore");
-
-    let computerScoreText = document.getElementById("computerScore");
-
     let playerScore = "0";
 
     let computerScore = "0";
-
 
     //figure out how to increase player and computer score individually based on who wins a round
 
     //this function will be based on numbers
     function play() {
+
+        ++playerScore
 
         let randNumber = Math.ceil(Math.random() * 3);
 
