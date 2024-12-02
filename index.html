@@ -15,55 +15,24 @@
 
 // remember to comment and pseudo-code everything 
 
-    let playerScore = "0";
 
-    let computerScore = "0";
+    function getComputerChoice() {
+        
+    let randomNumber = Math.ceil(Math.random() * 3);
 
-    function scoreCounter() {
+    let pcChoice;
 
-        yourScoreString = "This is your Score: "
-
-        computerScoreString = "This is the computers score: "
-
-        console.log(yourScoreString + playerScore)
-
-        console.log(computerScoreString + computerScore)
-    }
-
-    //figure out how to increase player and computer score individually based on who wins a round
-
-    //this function will be based on numbers
-    function play() {
-
-        ++playerScore
-
-        let randNumber = Math.ceil(Math.random() * 3);
-
-        let computerAnswer;
-
-    if (randNumber == 1) {
-    computerAnswer = "rock"
-    } else if (randNumber == 2) {
-    computerAnswer = "paper"
-    } else if (randNumber == 3) {
-    computerAnswer = "scissors"
+        if (randomNumber == 1) {
+            pcChoice = "rock"
+        } else if (randomNumber == 2) {
+            pcChoice = "paper"
+        } else if (randomNumber == 3) {
+            pcChoice = "scissors"
+        };
+        
+        return console.log(pcChoice);
     };
-
-    console.log(computerAnswer);
-
-    humanAnswer = prompt( 'will only accept "rock", "paper", "scissors"' );
-
-    playerResult = humanAnswer.toLowerCase();
-
-    console.log(playerResult);
-
-    if (humanAnswer == "rock") {
     
-    }
-
-    return;
-    };
-
 </script>
 </body>
 </html>
