@@ -15,6 +15,10 @@
 
 // remember to comment and pseudo-code everything 
 
+    playerScore = 0;
+
+    computerScore = 0;
+
 
     function getComputerChoice() {
         
@@ -40,7 +44,39 @@
         let playerChoice = userInput.toLowerCase();
 
         console.log(playerChoice)
+        return;
     }
+
+    function playRound(humanChoice, computerChoice) {
+        if (humanChoice === "rock" && computerChoice === "scissors") {
+            console.log("You win! Rock beats scissors")
+        } else if (humanChoice === "scissors" && computerChoice === "rock") {
+            console.log("You lose! Rock beats scissors") 
+        } else if (humanChoice === "paper" && computerChoice === "rock") {    
+            console.log("You win! Paper beats rock")
+        } else if (humanChoice === "rock" && computerChoice === "paper") {
+            console.log("You lose! Paper beats rock")
+        } else if (humanChoice === "scissors" && computerChoice === "paper") {
+            console.log("You win! Scissors beats paper") 
+        } else if (humanChoice === "paper" && computerChoice === "scissors") {
+            console.log("You lose! Scissors beats paper")
+        }
+        
+        
+        
+        else if (humanChoice === "rock" && computerChoice === "rock" 
+            || humanChoice === "paper" && computerChoice === "paper"
+            || humanChoice === "scissors" && computerChoice === "scissors"
+        ) {
+            console.log("Tie! No points awarded")
+        }
+    }
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+
 </script>
 </body>
 </html>
