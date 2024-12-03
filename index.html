@@ -9,16 +9,11 @@
 </head>
 <body>
 
-    <button onclick = "play()">Click here to start</button>
+    <button onclick = "playGame()">Click here to start</button>
 
 <script>
-
+//to do: figure how to re-prompt getPlayerChoice or figure how to store the value of a score even after a function is ended and restarted
 // remember to comment and pseudo-code everything 
-
-//Check wtf is wrong with playRound
-    playerScore = 0; //the players score is 0
-
-    computerScore = 0;//computer score is 0
 
 
     function getComputerChoice() { //function start no parameters
@@ -46,28 +41,41 @@
 
         let playerChoice = userInput.toLowerCase();//any option input will be changed from upper case into lowercase, so that the case sensitive string input doesn't have an error
 
-        const ChosenOption = playerChoice;
+        const chosenOption = playerChoice;
 
-        return ChosenOption;
+        return chosenOption;
     }//function closing tag
-//FUCK. WHY WONT THIS WORK// anger
+
+    function playGame() {
+
+
+
+    playerScore = 0; //the players score is 0
+    computerScore = 0;//computer score is 0
+
     function playRound(humanChoice, computerChoice) {//function start. 
 
         console.log(humanChoice)
         console.log(computerChoice)
 
         if (humanChoice === "rock" && computerChoice === "scissors") {
-            console.log("You win! Rock beats scissors")
+            console.log("You win! Rock beats scissors");
+            ++playerScore;
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
-            console.log("You lose! Rock beats scissors") 
+            console.log("You lose! Rock beats scissors") ;
+            ++computerScore;
         } else if (humanChoice === "paper" && computerChoice === "rock") {    
-            console.log("You win! Paper beats rock")
+            console.log("You win! Paper beats rock");
+            ++playerScore;
         } else if (humanChoice === "rock" && computerChoice === "paper") {
-            console.log("You lose! Paper beats rock")
+            console.log("You lose! Paper beats rock");
+            ++computerScore;
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            console.log("You win! Scissors beats paper") 
+            console.log("You win! Scissors beats paper");
+            ++playerScore;
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
-            console.log("You lose! Scissors beats paper")
+            console.log("You lose! Scissors beats paper");
+            ++computerScore;
         } else if (humanChoice === "rock" && computerChoice === "rock" 
             || humanChoice === "paper" && computerChoice === "paper"
             || humanChoice === "scissors" && computerChoice === "scissors"
@@ -75,7 +83,14 @@
             console.log("Tie! No points awarded")
         }
 
-        //console.log()
+        let stringForYourScore = "This is your score: "
+
+        let stringForComputerScore = "This is the computer's score: "
+
+        console.log(stringForYourScore + playerScore)
+
+        console.log(stringForComputerScore + computerScore)
+
         return;
     }
 
@@ -83,7 +98,12 @@
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
+    playRound(humanSelection, computerSelection);
 
+    }
 </script>
 </body>
 </html>
